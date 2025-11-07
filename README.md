@@ -1,4 +1,4 @@
-# 🧠 Persistent Memory Leak Detector
+# Persistent Memory Leak Detector
 
 The **Persistent Memory Leak Detector** tracks and logs unfreed memory in C programs by intercepting `malloc()` and `free()` using **LD_PRELOAD**.  
 It stores allocation details in an **SQLite database** for persistent analysis.  
@@ -6,7 +6,7 @@ A **Python tool** summarizes and compares leaks across runs to detect long-term 
 
 ---
 
-## 🎯 Objectives
+## Objectives
 - Detect dynamically allocated memory that is not freed.  
 - Store all allocation and deallocation information persistently.  
 - Generate detailed leak summaries and reports.  
@@ -14,7 +14,7 @@ A **Python tool** summarizes and compares leaks across runs to detect long-term 
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 1. **Hooking:** `malloc()` and `free()` are intercepted using `LD_PRELOAD`.  
 2. **Logging:** Every allocation and deallocation is recorded in `memory_leaks.db`.  
 3. **Persistence:** Data is stored permanently for future analysis.  
@@ -22,7 +22,7 @@ A **Python tool** summarizes and compares leaks across runs to detect long-term 
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ├── memory_hook.c       # Intercepts malloc() and free() calls
 
@@ -37,7 +37,7 @@ A **Python tool** summarizes and compares leaks across runs to detect long-term 
 
 ---
 
-## 🧰 Requirements
+## Requirements
 - **Operating System:** Ubuntu 22.04+ / Linux  
 - **Compiler:** GCC 13+  
 - **Database:** SQLite 3+  
@@ -45,7 +45,7 @@ A **Python tool** summarizes and compares leaks across runs to detect long-term 
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### 1️⃣ Compile the Hook Library
 
@@ -78,7 +78,7 @@ python3 analyze_leaks.py compare       # Compare two runs
 
 ---
 
-## 🖥️ Output
+## Output
 
 ### 1️⃣ Terminal Execution
 
@@ -169,7 +169,7 @@ Result:
 
 ---
 
-## 🧠 Concept Summary
+## Concept Summary
 
 * Uses **LD_PRELOAD** for dynamic function hooking.
 * Tracks all memory allocations and frees in real-time.
@@ -178,7 +178,7 @@ Result:
 
 ---
 
-## 🧾 References
+## References
 
 * [Linux Man Pages – LD_PRELOAD & dlsym](https://man7.org/linux/man-pages/)
 * [SQLite Official Documentation](https://www.sqlite.org)
